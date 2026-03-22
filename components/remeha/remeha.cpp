@@ -54,7 +54,7 @@ void RemehaComponent::get_sample_() {
   memset(data, 0, sizeof(data));
 
   this->write_array(SAMPLE_CMD, sizeof(SAMPLE_CMD));
-  delay(250);  // Wait for boiler response (at 9600 baud ~83 ms for 80 bytes)
+  delay(400);  // Wait for boiler response (at 9600 baud ~83 ms for 80 bytes)
 
   int n = read_response(this, data, sizeof(data));
 
