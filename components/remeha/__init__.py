@@ -9,7 +9,7 @@ from esphome.components import uart
 from esphome.const import CONF_ID
 
 CODEOWNERS = ["@jghaanstra"]
-AUTHORS = ["@jghaanstra", "GitHub Copilot (Claude Sonnet 4.6)"]
+AUTHORS = ["@jghaanstra", "Claude Sonnet 4.6"]
 DEPENDENCIES = ["uart"]
 AUTO_LOAD = ["sensor"]
 MULTI_CONF = False

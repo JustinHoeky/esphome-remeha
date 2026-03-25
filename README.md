@@ -1,8 +1,8 @@
-# esphome-remeha
+# ESPHome Remeha / Dietrich external component
 
-Native ESPHome external component for Remeha / De Dietrich central heating boilers.
+Native ESPHome external component for reading out the values of Remeha / De Dietrich central heating boilers.
 
-Based on [kakaki/esphome_dietrich](https://github.com/kakaki/esphome_dietrich), rewritten as a proper ESPHome *external component* to work with **ESPHome 2025.2+** (including 2026.x), where `platform: custom` and the `includes:` hook were removed.
+Based on [kakaki/esphome_dietrich](https://github.com/kakaki/esphome_dietrich), rewritten by Claude Sonnet 4.6 as a proper ESPHome *external component* to work with **ESPHome 2025.2+** (including 2026.x), where `platform: custom` and the `includes:` hook were removed. Supplied as is, use at your own risk.
 
 ## Background
 
@@ -19,6 +19,20 @@ This repository solves the problem structurally: the logic has been converted to
 - ESPHome 2025.2 or higher
 - ESP8266 (e.g. NodeMCU v2) or ESP32
 - UART connection to the boiler at 9600 baud, 8N1
+
+## Connection schema
+```
+ Heater Board from top       ESP8266
+    4P4C RJ connector
+    
+       +---------+
+GND 4  ---       +--+        GND (GND)
+TXD 3  ---          |        RX (GPIO13 / D7)
+RXD 2  ---          |        TX (GPIO15 / D8)
+5V  1  ---       +--+        5V (VIN)
+       +---------+
+```
+
 
 ## Installation
 
@@ -143,4 +157,4 @@ See [example-cv-ketel.yaml](example-cv-ketel.yaml) for a complete configuration 
 
 Original code: [kakaki/esphome_dietrich](https://github.com/kakaki/esphome_dietrich)
 
-The ESPHome external component (C++ and Python code) in this repository was written by [GitHub Copilot](https://github.com/features/copilot) (Claude Sonnet 4.6), based on the original custom component logic.
+The ESPHome external component (C++ and Python code) in this repository was written by Claude Sonnet 4.6, based on the original custom component logic.
